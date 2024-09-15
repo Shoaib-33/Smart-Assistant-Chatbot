@@ -7,31 +7,31 @@ This project leverages LangChain, Streamlit, and HuggingFace's state-of-the-art 
 
 # Technical Specifications
 
-## Environment and Dependencies: 
+### Environment and Dependencies: 
 The project utilizes several key technologies to create an interactive and efficient birthday party planning assistant. Streamlit is employed to develop the web interface, providing a user-friendly platform for interaction. LangChain is integrated to bridge conversational AI with data retrieval capabilities, enabling the assistant to fetch relevant information based on user queries. HuggingFace provides pre-trained language models and embeddings; specifically, HuggingFaceHub is used to load the language model, while HuggingFaceEmbeddings is utilized to encode the dataset. FAISS is used for managing and retrieving dense vector representations of the data, facilitating quick and accurate responses.
 
-## Data Management: 
+### Data Management: 
 The dataset utilized in this project is a synthetically generated CSV file named Party.csv, which was created using GPT-4.0(Free version). This dataset contains 1,000 rows and five columns: venue, caterers, entertainment, date, and time. To integrate this data into the system, CSVLoader from LangChain is used to load the data, converting it into a format suitable for embedding and retrieval.
 
-## Embedding: 
+### Embedding: 
 Textual data from the CSV file is converted into dense vector representations using HuggingFaceEmbeddings. The specific model used for this task is `sentence-transformers/all-MiniLM-L6-v2`. This model generates high-quality embeddings that capture semantic meanings of the text, which are crucial for performing efficient similarity searches. The embeddings are computed on the CPU, as indicated by the parameter model_kwargs={'device': 'cpu'}, ensuring compatibility and eliminating the need for a GPU.
 
-## Model Loading:
+### Model Loading:
 The core language model is `Mistral Mixtral-8x7B-Instruct-v0.1`, loaded through the HuggingFaceHub API. This model is configured with parameters such as temperature set to 0.1, which controls the randomness of the generated responses, and top_k set to 50, limiting the number of candidate tokens considered for each step. An API token is required for authenticating with HuggingFace Hub, ensuring secure access to the model.
 
 ## Conversational Retrieval Chain:
 The project employs a `ConversationalRetrievalChain` that combines the language model and the FAISS retriever. This setup integrates the language generation capabilities with the efficient data retrieval system provided by FAISS. The chain uses the language model (llm) to generate responses based on queries and the retriever to fetch relevant information from the embedded dataset.
 
-## Custom Prompt Handling:
+### Custom Prompt Handling:
 A custom prompt function is designed to format user queries in a way that guides the assistant's responses. The prompt ensures that the assistant only uses information available from the dataset, avoids generating unsupported information, and maintains a formal, helpful tone. It also includes instructions for booking confirmations and suggesting alternative dates if necessary.
 
-## User Interaction and Chat Management:
+### User Interaction and Chat Management:
 The user interface is created using Streamlit, where users can input queries and receive responses. The chat interface includes a title and instructions to guide user interactions. The conversation history is maintained in `st.session_state`, which keeps track of both user inputs and assistant responses. The streamlit_chat library is used to display these interactions with distinct avatars for better user experience.
 
-## Session State Management:
+### Session State Management:
 The project manages session state using Streamlit’s st.session_state to handle conversation history. This includes variables such as history for storing past interactions, generated for the assistant's responses, and past for tracking user queries. This state management ensures continuity and coherence in the dialogue.
 
-## Deployment and Usage:
+### Deployment and Usage:
 The project is designed to be run locally using Streamlit. Users can clone the repository, install the required dependencies, and launch the app to interact with the assistant. The deployment process involves setting up the environment, configuring the app, and running it to provide users with real-time party planning assistance.
 
 
