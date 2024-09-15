@@ -14,7 +14,7 @@ def load_llm():
     llm = HuggingFaceHub(
         repo_id=repo_id,
         model_kwargs={"temperature": 0.1, "top_k": 50},
-        huggingfacehub_api_token=st.secrets["hf_token"]
+        huggingfacehub_api_token=st.secrets["key"]
     )
     return llm
 
