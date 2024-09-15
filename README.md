@@ -2,7 +2,7 @@
 
 This project leverages LangChain, Streamlit, and HuggingFace's state-of-the-art language models to create an intelligent assistant that helps users plan birthday parties. The assistant recommends venues, caterers, and entertainment options based on user inputs. It is powered by a custom prompt and retrieves data from a CSV file to provide relevant suggestions and confirm bookings.
 
-<img src = "chatbot.png" width="900" height="400">  
+<img src = "chatbot.png" width="500" height="300">  
 
 
 # Technical Specifications
