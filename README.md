@@ -32,8 +32,7 @@ The user interface is created using Streamlit, where users can input queries and
 The project manages session state using Streamlit’s st.session_state to handle conversation history. This includes variables such as history for storing past interactions, generated for the assistant's responses, and past for tracking user queries. This state management ensures continuity and coherence in the dialogue.
 
 ### Deployment and Usage:
-The project is designed to be run locally using Streamlit. Users can clone the repository, install the required dependencies, and launch the app to interact with the assistant. The deployment process involves setting up the environment, configuring the app, and running it to provide users with real-time party planning assistance.
-
+The project is designed to be run locally using Streamlit. Users can clone the repository, install the required dependencies, and launch the app to interact with the assistant. The deployment process involves setting up the environment, configuring the app, and running it to provide users with real-time party planning assistance.The Streamlit link is [here](https://smart-assistant-chatbot-7iihjhguukrodaxq3back2.streamlit.app/)
 
 # Working Principal of Chatbot
 
@@ -55,6 +54,23 @@ Users can enter queries into a chat interface, such as asking for available venu
 WThe assistant follows up with relevant recommendations, provides booking confirmations, and offers alternative dates when necessary.
 
 
+# Setup
+To install chatbot clone this repository using the following command: 
+
+```git clone https://github.com/your-repo/birthday-planning-assistant.git```
+
+Then create a directory and move to the directory using:
+
+```cd birthday-planning-assistant```
+Install the necessary dependencies using:
+
+```pip install -r requirements.txt```
+
+Then run the streamlit using command:
+
+```streamlit run app.py```
+
+
  # Technical Difficulties
  
 The project presented several challenges primarily due to the use of a free model, which generally has limitations in handling contextual data effectively. One significant issue was the model's performance with the CSV dataset. Although the data was well-structured for retrieval, the free model struggled to deliver accurate and contextually relevant responses.
@@ -71,3 +87,5 @@ Overall, while the free model provided a foundational capability, its limitation
 
 However, there is substantial potential for improvement in this project. Utilizing advanced models such as GPT-3.5 or other paid alternatives could significantly enhance the model's ability to grasp context more effectively. Additionally, fine-tuning these models could further improve contextual accuracy, particularly when applied to a large dataset. Enhancing the dataset to be more comprehensive and well-structured would also contribute to better contextual understanding. Furthermore, considerable advancements can be made in the user interface and user experience (UI/UX) of the chatbot, which would improve overall user interaction and satisfaction.
 
+
+## Streamlit link is [here](https://smart-assistant-chatbot-7iihjhguukrodaxq3back2.streamlit.app/)
