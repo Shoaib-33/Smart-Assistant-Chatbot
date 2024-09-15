@@ -62,6 +62,7 @@ To install chatbot clone this repository using the following command:
 Then create a directory and move to the directory using:
 
 ```cd birthday-planning-assistant```
+
 Install the necessary dependencies using:
 
 ```pip install -r requirements.txt```
